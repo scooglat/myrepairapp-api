@@ -1,5 +1,4 @@
-import requests, exceptions, logging, asyncio, random
-import inventory_item, checkin_ticket
+import requests, exceptions, logging, asyncio, random, inventory_item, checkin_ticket
 from rich.logging import RichHandler
 
 FORMAT = "%(message)s"

@@ -47,6 +47,7 @@ class InventoryItemCategory(enum.Enum):
     DEVICE = "Device"
     ACCESSORY = "Accessory"
     SERVICE = "Service"
+    TOOLS = "Tools"
     TOOL = "Tool"
 
     @classmethod
