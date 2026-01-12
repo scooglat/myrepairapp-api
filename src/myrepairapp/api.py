@@ -1,9 +1,17 @@
-import requests, logging, asyncio, random, enum
+import requests
+import logging
+import asyncio
+import random
+import enum
+
 if __name__ == "__main__":
     pass
     # import exceptions, inventory_item, checkin_ticket, generic
 else:
-    from . import exceptions, inventory_item, checkin_ticket, generic
+    from . import exceptions
+    from . import inventory_item
+    from . import checkin_ticket
+    from . import generic
 from rich.logging import RichHandler
 
 FORMAT = "%(message)s"

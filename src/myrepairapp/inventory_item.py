@@ -43,7 +43,7 @@ class InventoryItemCondition(enum.Enum):
     def get_from_string(cls, input_str: str | None) -> "InventoryItemCondition | None":
         if not input_str:
             return None
-        
+
         # This handles case-insensitivity and ensures the input is valid
         # If the key is not found, ValueError is raised automatically by enum.Enum
         try:

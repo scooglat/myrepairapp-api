@@ -5,7 +5,7 @@ if __name__ == "checkin_ticket":
     # from inventory_item import InventoryItem, item_from_json
 else:
     from .inventory_item import InventoryItem, item_from_json
-    
+
 class CheckinTicketActivity:
     jsonID = None; checkinTicketID = None; userID = None; activity_type = None; metadata = None; createdAt = None
 
@@ -16,7 +16,7 @@ class CheckinTicketActivity:
         DEVICES_CHANGED = "DEVICES_CHANGED"
         STATUS_CHANGE = "STATUS_CHANGE"
         SAVED = "SAVED"
-        
+
         @classmethod
         def get_from_string(cls, input_str: str | None) -> "CheckinTicketActivity.CheckinActivityType | None":
             if not input_str:
@@ -31,7 +31,7 @@ class CheckinTicketActivity:
         self.jsonID = jsonID; self.checkinTicketID = checkinTicketID; self.userID = userID
         self.activity_type = CheckinTicketActivity.CheckinActivityType.get_from_string(activity_type)
         self.metadata = metadata; self.createdAt = createdAt
-    
+
     def __repr__(self):
         return str(self.activity_type)
 
@@ -54,7 +54,7 @@ class CheckInTicket:
                  waitingForPart: bool, shipper: str, trackingNumber: str, shipstationShipmentID: str, labelURL: str, claimRepairProvider: str, createdAt: str,        \
                  updatedAt: str, assignee: str, customer: str, checkinItems: list[InventoryItem], checkinDevices: str, checkinPayments: str, checkinNotes: str,                \
                  checkinTicketActivities:list[CheckinTicketActivity], myProtectionPlans: list):
-        
+
         self.jsonID = jsonID; self.orgID = orgID; self.ticketNumber = ticketNumber; self.active = active; self.assigneeID = assigneeID; self.customerID = customerID
         self.order = order; self.type = _type; self.status = status; self.closedAt = closedAt; self.warrantyPeriodEnd = warrantyPeriodEnd; self.isWarranty = isWarranty
         self.isReturn = isReturn; self.notToExceed = notToExceed; self.appointmentTime = appointmentTime; self.customerPossession = customerPossession
@@ -66,7 +66,7 @@ class CheckInTicket:
         # ---------------------------------------
         self.assignee = assignee; self.customer = customer; self.checkinItems = checkinItems; self.checkinDevices = checkinDevices; self.checkinPayments = checkinPayments
         self.checkinNotes = checkinNotes; self.checkinTicketActivities = checkinTicketActivities; self.myProtectionPlans = myProtectionPlans
-    
+
     def __repr__(self):
         if len(self.checkinItems) > 0:
             self.checkinItems = [item_from_json(item["inventoryItem"]) for item in self.checkinItems]
